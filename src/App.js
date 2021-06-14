@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { Fragment } from 'react';
 import './App.css';
+// components
+import SearchBox from './components/SearchBox'
+import Condition from './components/Condition'
+import Sidebar from './components/Sidebar'
+import WeatherTable from './components/WeatherTable'
+import WeatherState from './context/WeatherState'
 
-function App() {
+
+
+function App() { 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <WeatherState >
+
+      <Fragment>
+          <div className="sideOne">
+            <SearchBox  />
+            <Condition />
+            <WeatherTable />
+          </div>
+
+          <div className="sideTwo">
+            <Sidebar />
+          </div>
+      </Fragment>
+
+    </WeatherState>
   );
 }
 
