@@ -1,32 +1,37 @@
-import { Fragment } from 'react';
-import './App.css';
+import { useEffect, useContext } from 'react';
+import { AppContext } from './context';
+import './styles/App.css';
 // components
-import SearchBox from './components/SearchBox'
-import Condition from './components/Condition'
-import Sidebar from './components/Sidebar'
-import WeatherTable from './components/WeatherTable'
-import WeatherState from './context/WeatherState'
+import SearchBox from './components/SearchBox';
+import Condition from './components/Condition';
+import Sidebar from './components/Sidebar';
+import WeatherTable from './components/WeatherTable';
 
-
-
-function App() { 
+function App() {
+  const { FetchData } = useContext(AppContext);
+  //fetch data fram local storage
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('location')) === null) {
+      FetchData('london');
+    } else {
+      const loc = JSON.parse(localStorage.getItem('location'));
+      FetchData(loc);
+    }
+    //eslint-disable-next-line
+  }, []);
 
   return (
-    <WeatherState >
+    <>
+      <div className='sideOne'>
+        <SearchBox />
+        <Condition />
+        <WeatherTable />
+      </div>
 
-      <Fragment>
-          <div className="sideOne">
-            <SearchBox  />
-            <Condition />
-            <WeatherTable />
-          </div>
-
-          <div className="sideTwo">
-            <Sidebar />
-          </div>
-      </Fragment>
-
-    </WeatherState>
+      <div className='sideTwo'>
+        <Sidebar />
+      </div>
+    </>
   );
 }
 

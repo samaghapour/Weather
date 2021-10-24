@@ -1,0 +1,46 @@
+.table {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 410px;
+  margin: 2rem 0 0;
+}
+.table::-webkit-scrollbar {
+  width: 6px;
+}
+.table::-webkit-scrollbar-thumb {
+  width: 100%;
+  background: rgb(63, 67, 68);
+  border-radius: 5px;
+}
+.weatherTable {
+  width: 100%;
+  padding: 0.4rem;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 5px;
+}
+.weatherTable tr {
+  display: flex;
+  border-bottom: 1px solid #333;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  font-family: 'Poppins', sans-serif;
+}
+.weatherTable .temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weatherTable .date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 600;
+}
+.weatherTable .date span {
+  font-weight: 400;
+}

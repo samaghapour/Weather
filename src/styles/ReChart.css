@@ -1,0 +1,21 @@
+.chartBox {
+  padding: 0.6rem;
+  padding-right: 0.6rem;
+  margin-left: -2rem;
+  height: 30%;
+}
+
+.tooltip {
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 156, 208, 0.449),
+    rgba(186, 221, 238, 0.496)
+  );
+  color: rgb(30, 29, 29);
+  border-radius: 10px;
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

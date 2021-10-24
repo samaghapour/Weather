@@ -1,30 +1,35 @@
-import React , {useState,useContext} from 'react'
-import WeatherContext from '../context/weatherContext'
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../context';
 
- const SearchBox = () => {
-        const weatherContext = useContext(WeatherContext)
+const SearchBox = () => {
+  const { FetchData } = useContext(AppContext);
 
-        const [place, setplace] = useState('')
+  const [place, setplace] = useState('');
 
-        // fetch data with searched name
-        const searchPlace = e => {
-               e.preventDefault();
-               weatherContext.fetchData(place)
-              setplace('')
-        }
+  // fetch data with searched name
+  const searchPlace = (e) => {
+    e.preventDefault();
+    FetchData(place);
+    setplace('');
+  };
 
-        const changeInputValue = (e) => {
-               setplace(e.target.value)
-        }
-        
-    return (
-      
-           <form className="searchBox" onSubmit={searchPlace}>
-           <input type="search" name="search" id="search" placeholder="Search Places" onChange={changeInputValue} value={place} autoComplete='off'/>
-           <i className="fas fa-search"></i>
-           </form>
-              
-    )
-}
+  const changeInputValue = (e) => {
+    setplace(e.target.value);
+  };
 
-export default SearchBox
+  return (
+    <form className='searchBox' onSubmit={searchPlace}>
+      <input
+        type='search'
+        name='search'
+        id='search'
+        placeholder='Search Places'
+        onChange={changeInputValue}
+        value={place}
+        autoComplete='off'
+      />
+    </form>
+  );
+};
+
+export default SearchBox;

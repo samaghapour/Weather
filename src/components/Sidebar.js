@@ -1,16 +1,13 @@
-import React, { Fragment } from 'react'
-import ReChart from './ReChart'
-import Details from './Details'
+import ReChart from './ReChart';
+import Details from './Details';
 
- const Sidebar = () => {
-     
-    return (
-        <Fragment>
-            <ReChart/>
-            <Details />
-            
-        </Fragment>
-    )
-}
+const Sidebar = () => {
+  return (
+    <>
+      <ReChart />
+      <Details />
+    </>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

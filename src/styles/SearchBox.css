@@ -1,0 +1,29 @@
+.searchBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 5%;
+  padding: 1rem 0 2rem;
+}
+#search {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #333;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  width: 60%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.lightSearch::placeholder {
+  color: black;
+  z-index: 1;
+}
+.darkSearch::placeholder {
+  color: rgba(206, 199, 199, 0.877);
+  z-index: 1;
+}
