@@ -4,8 +4,10 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="theme-color" content="#000000"/>
+        <link rel="shortcut icon" href="/image/logo-192.png" type="image/png">
+        <link rel="apple-touch-icon" href="/image/logo-192.png">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+        <link rel="manifest" href="/manifest.json"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,4 +21,10 @@
         </div>
         <div id="root"></div>
     </body>
-</html>
+    <script>
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceWorker.js').catch(err => console.log('service worker can not registered:', err));
+        }
+    </script>
+</html></html></html>
